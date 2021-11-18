@@ -35,14 +35,14 @@ class DataBase
     }
 
 
-    public function createPost($table, $food, $address, $description, $username)
+    public function createPost($table, $food, $address, $description, $owner)
     {
         $food = $this->prepareData($food);
         $address = $this->prepareData($address);
         $description = $this->prepareData($description);
-        $username = $this->prepareData($username);
+        $username = $this->prepareData($owner);
         $this->sql =
-            "INSERT INTO " . $table . " (food, address, description, username) VALUES ('" . $food . "','" . $address . "','" . $description . "','" . $username . "')";
+            "INSERT INTO " . $table . " (food, address, description, owner) VALUES ('" . $food . "','" . $address . "','" . $description . "','" . $owner . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;

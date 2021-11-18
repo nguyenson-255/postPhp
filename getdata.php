@@ -8,7 +8,7 @@
         die("ERROR in connection: " .mysqli_connect_error());
     }
     $response= array();
-    $sql_query ="select * from users";
+    $sql_query ="select * from postfood";
     $result = mysqli_query($conn,$sql_query);
     if(mysqli_num_rows($result)>0){
         $response['success'] = 1;

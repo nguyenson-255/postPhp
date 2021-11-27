@@ -40,7 +40,8 @@ class DataBase
         $food = $this->prepareData($food);
         $address = $this->prepareData($address);
         $description = $this->prepareData($description);
-        $username = $this->prepareData($owner);
+        $owner = $this->prepareData($owner);
+        
         $this->sql =
             "INSERT INTO " . $table . " (food, address, description, owner) VALUES ('" . $food . "','" . $address . "','" . $description . "','" . $owner . "')";
         if (mysqli_query($this->connect, $this->sql)) {
